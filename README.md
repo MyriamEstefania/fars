@@ -1,6 +1,6 @@
 # FARS: Accident Data Analysis package
 
-[![Travis-CI Build Status](https://travis-ci.org/zkabat/fars.svg?branch=master)](https://travis-ci.org/zkabat/fars)
+[![Travis-CI Build Status](https://travis-ci.org/MyriamEstefania/fars.svg?branch=master)](https://travis-ci.org/MyriamEstefania/fars)
 
 Este es un paquete `R` creado para el curso Coursera [Building R Packages](https://www.coursera.org/learn/r-packages/home). Contiene varias funciones básicas para analizar datos del Sistema de Informes de Análisis de Fatalidades (FARS) - [source](http://www.nhtsa.gov/Data/Fatality-Analysis-Reporting-System-(FARS)). El objetivo es demostrar la capacidad de documentar funciones, crear viñetas y pruebas y también incluir datos con el paquete.
 
