@@ -1,0 +1,50 @@
+---
+title: "Generalidades del paquete FARS"
+author: "Myriam Abad"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Generalidades del paquete FARS}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+```{r, echo = FALSE, include = FALSE}
+library(fars)
+library(dplyr)
+library(maps)
+```
+
+Esta viñeta ofrece una breve descripción de la funcionalidad del paquete FARS. El paquete contiene un conjunto de funciones adecuadas para el análisis de datos de FARS - Sistema de notificación de análisis de muertes.
+
+## Funciones del paquete
+Este paquete contiene 3 funciones que se exportaran al paquete:
+- `fars_read()`
+- `fars_summarize_years()`
+- `fars_map_state()`
+
+## Lee un archivo de datos csv
+
+La función `fars_read ()` proporciona una forma de leer datos de una ruta de archivo proporcionada como argumento. Devuelve un `tibble` con datos cargados:
+
+```{r fars_read_example}
+filename <- system.file("extdata/accident_2013.csv.bz2", package = "fars")
+fars_read(filename)
+```
+
+## Lee anios
+
+La función `fars_summarize_years ()` toma un vector o una lista de años (valores numéricos / enteros) como argumento y si los archivos correspondientes con datos están disponibles, devuelve una tabla dinámica con el número de accidentes por año y mes. 
+
+```{r fars_summarize_years_example}
+setwd(system.file("extdata", package = "fars"))
+fars_summarize_years(2013:2015)
+```
+
+## Obtener un par clave-valor
+
+La función  `fars_map_state ()` toma un índice de estado y año como argumentos y devuelve un gráfico del estado con ubicaciones de accidentes. Los índices de estado deben corresponder a las indeces disponibles del conjunto de datos.
+
+```{r fars_map_state_example}
+setwd(system.file("extdata", package = "fars"))
+fars_map_state(45, 2015)
+```
